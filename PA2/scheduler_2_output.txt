@@ -1,0 +1,284 @@
+./scheduler_2 5 6 4 4 7 4 6 7 5 6 7 4 5 5 7 6 4 6 5 5 6 4 4 7 5 6 6 5 4 7 6 7 6 7 5 7 7 5 4 5 6 6
+Thread 1 CPU1 : 5, CPU2 : 7, CPU3 : 7, IO1 : 4, IO2 : 4, IO3 : 5
+Thread 2 CPU1 : 6, CPU2 : 5, CPU3 : 6, IO1 : 4, IO2 : 7, IO3 : 7
+Thread 3 CPU1 : 4, CPU2 : 6, CPU3 : 4, IO1 : 7, IO2 : 6, IO3 : 7
+Thread 4 CPU1 : 4, CPU2 : 7, CPU3 : 6, IO1 : 5, IO2 : 7, IO3 : 5
+Thread 5 CPU1 : 7, CPU2 : 4, CPU3 : 5, IO1 : 6, IO2 : 6, IO3 : 4
+Thread 6 CPU1 : 4, CPU2 : 5, CPU3 : 5, IO1 : 6, IO2 : 7, IO3 : 5
+Thread 7 CPU1 : 6, CPU2 : 5, CPU3 : 6, IO1 : 5, IO2 : 5, IO3 : 6
+Threads :
+T1      T2      T3      T4      T5      T6      T7
+
+running>T3      ready>T1,T2,T4,T5,T6,T7,     finished>                       IO>                     
+
+                3
+                2
+                1
+
+running>T3      ready>T1,T2,T4,T5,T6,T7,     finished>                       IO>                     
+
+                0
+
+running>T4      ready>T1,T2,T5,T6,T7,        finished>                       IO>T3,                  
+
+                        3
+                        2
+                        1
+
+running>T4      ready>T1,T2,T5,T6,T7,        finished>                       IO>T3,                  
+
+                        0
+
+running>T6      ready>T1,T2,T5,T7,           finished>                       IO>T3,T4,               
+
+                                        3
+                                        2
+                                        1
+
+running>T6      ready>T1,T2,T3,T5,T7,        finished>                       IO>T4,                  
+
+                                        0
+
+running>T1      ready>T2,T3,T5,T7,           finished>                       IO>T4,T6,               
+
+4
+3
+2
+
+running>T1      ready>T2,T3,T5,T7,           finished>                       IO>T4,T6,               
+
+1
+0
+
+running>T2      ready>T3,T4,T5,T7,           finished>                       IO>T1,T6,               
+
+        5
+        4
+        3
+
+running>T2      ready>T3,T4,T5,T7,           finished>                       IO>T1,T6,               
+
+        2
+        1
+        0
+
+running>T3      ready>T1,T4,T5,T7,           finished>                       IO>T2,T6,               
+
+                5
+                4
+                3
+
+running>T3      ready>T1,T4,T5,T7,           finished>                       IO>T2,T6,               
+
+                2
+                1
+                0
+
+running>T2      ready>T1,T4,T5,T7,           finished>                       IO>T3,T6,               
+
+        4
+        3
+        2
+
+running>T2      ready>T1,T4,T5,T7,           finished>                       IO>T3,T6,               
+
+        1
+        0
+
+running>T7      ready>T1,T4,T5,              finished>                       IO>T2,T3,T6,            
+
+                                                5
+                                                4
+                                                3
+
+running>T7      ready>T1,T4,T5,              finished>                       IO>T2,T3,T6,            
+
+                                                2
+                                                1
+                                                0
+
+running>T1      ready>T4,T5,                 finished>                       IO>T2,T3,T6,T7,         
+
+6
+5
+4
+
+running>T1      ready>T2,T4,T5,              finished>                       IO>T3,T6,T7,            
+
+3
+2
+1
+
+running>T1      ready>T2,T3,T4,T5,           finished>                       IO>T6,T7,               
+
+0
+
+running>T3      ready>T2,T4,T5,              finished>                       IO>T1,T6,T7,            
+
+                3
+                2
+                1
+
+running>T3      ready>T2,T4,T5,              finished>                       IO>T1,T6,T7,            
+
+                0
+
+running>T2      ready>T1,T4,T5,              finished>                       IO>T3,T6,T7,            
+
+        5
+        4
+        3
+
+running>T2      ready>T1,T4,T5,              finished>                       IO>T3,T6,T7,            
+
+        2
+        1
+        0
+
+running>T1      ready>T4,T5,                 finished>                       IO>T2,T3,T6,T7,         
+
+6
+5
+4
+
+running>T1      ready>T4,T5,                 finished>                       IO>T2,T3,T6,T7,         
+
+3
+2
+1
+
+running>T1      ready>T4,T5,                 finished>                       IO>T2,T3,T6,T7,         
+
+0
+
+running>T4      ready>T5,                    finished>T2,                    IO>T1,T3,T6,T7,         
+
+                        6
+                        5
+                        4
+
+running>T4      ready>T5,                    finished>T2,                    IO>T1,T3,T6,T7,         
+
+                        3
+                        2
+                        1
+
+running>T4      ready>T5,                    finished>T1,T2,                 IO>T3,T6,T7,            
+
+                        0
+
+running>T5      ready>                       finished>T1,T2,T3,              IO>T4,T6,T7,            
+
+                                6
+                                5
+                                4
+
+running>T5      ready>                       finished>T1,T2,T3,              IO>T4,T6,T7,            
+
+                                3
+                                2
+                                1
+
+running>T5      ready>                       finished>T1,T2,T3,              IO>T4,T6,T7,            
+
+                                0
+
+running>T4      ready>                       finished>T1,T2,T3,              IO>T5,T6,T7,            
+
+                        5
+                        4
+                        3
+
+running>T4      ready>                       finished>T1,T2,T3,              IO>T5,T6,T7,            
+
+                        2
+                        1
+                        0
+
+running>T5      ready>                       finished>T1,T2,T3,              IO>T4,T6,T7,            
+
+                                3
+                                2
+                                1
+
+running>T5      ready>                       finished>T1,T2,T3,              IO>T4,T6,T7,            
+
+                                0
+
+running>        ready>                       finished>T1,T2,T3,              IO>T4,T5,T6,T7,         
+
+running>        ready>                       finished>T1,T2,T3,T4,           IO>T5,T6,T7,            
+
+running>        ready>                       finished>T1,T2,T3,T4,           IO>T5,T6,T7,            
+
+running>T5      ready>                       finished>T1,T2,T3,T4,           IO>T6,T7,               
+
+                                4
+                                3
+                                2
+
+running>T5      ready>                       finished>T1,T2,T3,T4,           IO>T6,T7,               
+
+                                1
+                                0
+
+running>T6      ready>                       finished>T1,T2,T3,T4,           IO>T5,T7,               
+
+                                        4
+                                        3
+                                        2
+
+running>T6      ready>                       finished>T1,T2,T3,T4,           IO>T5,T7,               
+
+                                        1
+                                        0
+
+running>        ready>                       finished>T1,T2,T3,T4,T5,        IO>T6,T7,               
+
+running>        ready>                       finished>T1,T2,T3,T4,T5,        IO>T6,T7,               
+
+running>        ready>                       finished>T1,T2,T3,T4,T5,        IO>T6,T7,               
+
+running>T6      ready>                       finished>T1,T2,T3,T4,T5,        IO>T7,                  
+
+                                        4
+                                        3
+                                        2
+
+running>T6      ready>                       finished>T1,T2,T3,T4,T5,        IO>T7,                  
+
+                                        1
+                                        0
+
+running>T7      ready>                       finished>T1,T2,T3,T4,T5,        IO>T6,                  
+
+                                                4
+                                                3
+                                                2
+
+running>T7      ready>                       finished>T1,T2,T3,T4,T5,        IO>T6,                  
+
+                                                1
+                                                0
+
+running>        ready>                       finished>T1,T2,T3,T4,T5,T6,     IO>T7,                  
+
+running>        ready>                       finished>T1,T2,T3,T4,T5,T6,     IO>T7,                  
+
+running>T7      ready>                       finished>T1,T2,T3,T4,T5,T6,     IO>                     
+
+                                                5
+                                                4
+                                                3
+
+running>T7      ready>                       finished>T1,T2,T3,T4,T5,T6,     IO>                     
+
+                                                2
+                                                1
+                                                0
+
+running>        ready>                       finished>T1,T2,T3,T4,T5,T6,     IO>T7,                  
+
+running>        ready>                       finished>T1,T2,T3,T4,T5,T6,     IO>T7,                  
+
+running>        ready>                       finished>T1,T2,T3,T4,T5,T6,T7,  IO>
